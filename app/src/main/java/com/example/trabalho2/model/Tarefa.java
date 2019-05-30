@@ -1,7 +1,8 @@
-package model;
+package com.example.trabalho2.model;
 
-import enuns.Estado;
+import com.example.trabalho2.enuns.Estado;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Tarefa {
@@ -11,6 +12,24 @@ public class Tarefa {
     private Integer grauDificuldade;
     private Estado estado;
     private List<Etiqueta> etiquetas;
+    private LocalDateTime dt_limite;
+    private LocalDateTime dt_atualizacao;
+
+    public LocalDateTime getDt_limite() {
+        return dt_limite;
+    }
+
+    public void setDt_limite(LocalDateTime dt_limite) {
+        this.dt_limite = dt_limite;
+    }
+
+    public LocalDateTime getDt_atualizacao() {
+        return dt_atualizacao;
+    }
+
+    public void setDt_atualizacao(LocalDateTime dt_atualizacao) {
+        this.dt_atualizacao = dt_atualizacao;
+    }
 
     public List<Etiqueta> getEtiquetas() {
         return etiquetas;

@@ -1,4 +1,4 @@
-package enuns;
+package com.example.trabalho2.enuns;
 
 public enum Estado {
     AFAZER(1, "A fazer"),

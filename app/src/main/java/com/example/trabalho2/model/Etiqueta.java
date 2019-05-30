@@ -1,4 +1,4 @@
-package model;
+package com.example.trabalho2.model;
 
 public class Etiqueta {
     private Long id;
