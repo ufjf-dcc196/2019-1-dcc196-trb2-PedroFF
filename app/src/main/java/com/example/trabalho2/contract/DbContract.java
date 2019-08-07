@@ -28,5 +28,28 @@ public class DbContract {
         public static final String SQL_DROP_TAREFA = "DROP TABLE IF EXISTS" + Tarefa.TABELA;
     }
 
-    public class Etiqueta implements BaseColumns{}
+    public class Tag implements BaseColumns{
+        public static final String NOME_TABELA = "tag";
+        public static final String TITULO = "titulo";
+        public static final String INT_TYPE = " INTEGER";
+        public static final String TEXT_TYPE = " TEXT";
+        public static final String SEP = ",";
+        public static final String SQL_CRIA_TAG = "CREATE TABLE" +Tag.NOME_TABELA +" (" +
+                Tag._ID + INT_TYPE + "PRIMARY KEY AUTOINCREMENT" + SEP +
+                Tag.TITULO + TEXT_TYPE + ")";
+        public static final String SQL_DROP_TAG = "DROP TABLE IF EXISTS" + Tag.NOME_TABELA;
+    }
+
+    public class TarefaTag implements BaseColumns{
+        public static final String NOME_TABELA = "tarefa_tag";
+        public static final String TAG = "id_tag";
+        public static final String TAREFA = "id_tarefa";
+        public static final String INT_TYPE = " INTEGER";
+        public static final String SEP = ",";
+        public static final String SQL_CRIA_TAREFA_TAG = "CREATE TABLE" +TarefaTag.NOME_TABELA +" (" +
+                TarefaTag._ID + INT_TYPE + "PRIMARY KEY AUTOINCREMENT" + SEP +
+                TarefaTag.TAG + INT_TYPE + "NOT NULL" + SEP +
+                TarefaTag.TAREFA + INT_TYPE + "NOT NULL" + ")";
+        public static final String SQL_DROP_TAREFA_TAG = "DROP TABLE IF EXISTS" + TarefaTag.NOME_TABELA;
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.trabalho2.enuns;
+package com.example.trabalho2.model;
 
 public enum Estado {
     AFAZER(1, "A fazer"),
@@ -25,7 +25,7 @@ public enum Estado {
     public static Estado toEnum(Integer cod){
         if (cod==null)
             return null;
-        for (Estado estado: Estado.values()){
+        for (Estado estado: values()){
             if (cod.equals(estado.getCodigo())) {
                 return estado;
             }

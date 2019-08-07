@@ -1,6 +1,6 @@
 package com.example.trabalho2.model;
 
-public class Etiqueta {
+public class Tag {
     private Long id;
     private String tag;
 

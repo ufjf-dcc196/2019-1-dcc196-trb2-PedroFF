@@ -1,42 +1,44 @@
 package com.example.trabalho2.model;
 
-import com.example.trabalho2.enuns.Estado;
-
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Tarefa {
     private Long id;
     private String titulo;
     private String descricao;
-    private Integer grauDificuldade;
+    private Grau grauDificuldade;
     private Estado estado;
-    private List<Etiqueta> etiquetas;
-    private LocalDateTime dt_limite;
-    private LocalDateTime dt_atualizacao;
+    private List<Tag> tags;
+    private Date dt_limite;
+    private Date dt_atualizacao;
+    private final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
-    public LocalDateTime getDt_limite() {
-        return dt_limite;
+    public String getDt_limite() {
+        return format.format(dt_limite);
     }
 
-    public void setDt_limite(LocalDateTime dt_limite) {
+    public void setDt_limite(Date dt_limite) {
         this.dt_limite = dt_limite;
     }
 
-    public LocalDateTime getDt_atualizacao() {
-        return dt_atualizacao;
+    public String getDt_atualizacao() {
+        return format.format(dt_atualizacao);
     }
 
-    public void setDt_atualizacao(LocalDateTime dt_atualizacao) {
+    public void setDt_atualizacao(Date dt_atualizacao) {
         this.dt_atualizacao = dt_atualizacao;
     }
 
-    public List<Etiqueta> getEtiquetas() {
-        return etiquetas;
+    public List<Tag> getTags() {
+        return tags;
     }
 
-    public void setEtiquetas(List<Etiqueta> etiquetas) {
-        this.etiquetas = etiquetas;
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
     public Long getId() {
@@ -63,11 +65,11 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public Integer getGrauDificuldade() {
+    public Grau getGrauDificuldade() {
         return grauDificuldade;
     }
 
-    public void setGrauDificuldade(Integer grauDificuldade) {
+    public void setGrauDificuldade(Grau grauDificuldade) {
         this.grauDificuldade = grauDificuldade;
     }
 
@@ -77,5 +79,22 @@ public class Tarefa {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(Locale.getDefault(),
+                "Id: %d \n" +
+                "Título: %s \n" +
+                "Data Limite: %s \n" +
+                "Data Atualização: %s \n" +
+                "Grau de Dificuldade: %s \n" +
+                "Estado: %s",
+                this.getId(),
+                this.getTitulo(),
+                this.getDt_limite(),
+                this.getDt_atualizacao(),
+                this.getGrauDificuldade().getDescricao(),
+                this.getEstado().getDescricao());
     }
 }

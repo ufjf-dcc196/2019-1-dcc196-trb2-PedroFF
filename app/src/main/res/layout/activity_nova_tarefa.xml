@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:baselineAligned="false" android:gravity="center">
+
+    <EditText
+            android:id="@+id/tituloTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:targetApi="o" android:hint="@string/t_tulo_da_tarefa" android:layout_marginBottom="34dp"/>
+
+    <EditText
+            android:id="@+id/descricaoTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/descri_o"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:targetApi="o" android:layout_marginBottom="34dp"/>
+
+    <Spinner
+            android:id="@+id/grauTarefa"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_width="214dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="@string/grau_da_tarefa"
+            android:inputType="none"
+            android:spinnerMode="dialog"
+            android:layout_marginBottom="34dp"/>
+    <Spinner
+            android:id="@+id/estadoTarefa"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:layout_width="214dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="@string/estado_da_tarefa"
+            android:inputType="none"
+            android:spinnerMode="dialog"
+
+            android:layout_marginBottom="34dp"/>
+    <EditText
+            android:id="@+id/dataTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:targetApi="o" android:hint="@string/data_da_tarefa"
+            tools:layout_editor_absoluteY="400dp" android:layout_marginBottom="34dp"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="84dp" android:layout_marginBottom="28dp" android:id="@+id/tags"/>
+    <Button
+            android:id="@+id/btnSalvarTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cadastrar_tarefa"
+            android:baselineAligned="false"/>
+
+</LinearLayout>
