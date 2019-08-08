@@ -22,10 +22,9 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-
         RecyclerView rv = findViewById(R.id.tarefas_recycle);
         this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
-        adapter.setOnTarefaClickListener(new TarefaAdapter.OnTarefaClickListener() {
+        this.adapter.setOnTarefaClickListener(new TarefaAdapter.OnTarefaClickListener() {
             @Override
             public void onTarefaClick(View tarefaView, int position) {
                 Intent intent = new Intent(PrincipalActivity.this, EditarTarefaActivity.class);
@@ -34,7 +33,7 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
 
-        rv.setAdapter(adapter);
+        rv.setAdapter(this.adapter);
 
         Button btnTarefa = findViewById(R.id.novaTarefa);
         btnTarefa.setOnClickListener(new View.OnClickListener() {

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.trabalho2.R;
 import com.example.trabalho2.adapter.TarefaAdapter;
@@ -17,8 +18,9 @@ import com.example.trabalho2.model.Tag;
 public class ListarTarefaActivity extends AppCompatActivity {
     private TarefaAdapter adapter;
     private Tag tag;
-    private static final int CADASTRAR_TAREFA= 1;
+    private static final int DELETAR_TAREFA= 1;
     private static final int EDITAR_TAREFA = 2;
+    private TextView titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class ListarTarefaActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             this.tag = (Tag) bundle.get("tag");
+            this.titulo.append(" "+tag.getTag());
         }
         final RecyclerView rv = findViewById(R.id.tarefasPorTag);
         if (this.tag == null) {
@@ -47,9 +50,9 @@ public class ListarTarefaActivity extends AppCompatActivity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == ListarTarefaActivity.CADASTRAR_TAREFA) {
+        if (requestCode == ListarTarefaActivity.DELETAR_TAREFA) {
             if (resultCode == Activity.RESULT_OK) {
-                Toast.makeText(this, "Tarefa cadastrada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Tarefa deletada", Toast.LENGTH_SHORT).show();
                 if (this.tag == null) {
                     this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
                 } else {

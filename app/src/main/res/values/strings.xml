@@ -15,4 +15,5 @@
     <string name="cadastrar_tag">Cadastrar Tag</string>
     <string name="lista_de_tags">Lista de Tags</string>
     <string name="lista_de_tarefas_pela_tag">Lista de Tarefas pela Tag:</string>
+    <string name="listar_tags">Listar tags</string>
 </resources>
