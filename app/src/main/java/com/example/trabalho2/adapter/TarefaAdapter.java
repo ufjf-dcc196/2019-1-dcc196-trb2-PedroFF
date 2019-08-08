@@ -85,7 +85,7 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView txtTitulo = itemView.findViewById(R.id.tag_recycle);
+        private final TextView txtTitulo = itemView.findViewById(R.id.tarefa_recycle);
         private final Context context;
 
         private ViewHolder(View itemView, Context context) {
@@ -105,4 +105,6 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.ViewHolder
             });
         }
     }
+
+
 }

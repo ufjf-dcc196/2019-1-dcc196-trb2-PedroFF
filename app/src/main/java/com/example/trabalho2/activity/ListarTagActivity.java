@@ -24,8 +24,8 @@ public class ListarTagActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principal);
-        final RecyclerView rv = findViewById(R.id.tags);
+        setContentView(R.layout.activity_listar_tags);
+        final RecyclerView rv = findViewById(R.id.tags_recycle);
         this.adapter = new TagAdapter(TagDAO.getInstance().getTags(this));
         adapter.setOnTagClickListener((tarefaView, position) -> {
             Tag tag = adapter.getTag(position);
@@ -42,14 +42,7 @@ public class ListarTagActivity extends AppCompatActivity {
         });
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        Button btnTag = findViewById(R.id.tags);
-        btnTag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ListarTagActivity.this, InserirTagActivity.class);
-                startActivityForResult(intent, ListarTagActivity.TAG_CADASTRADA);
-            }
-        });
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

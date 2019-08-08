@@ -97,7 +97,10 @@ public class EditarTarefaActivity extends AppCompatActivity {
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent();
                 TarefaDAO.getInstance().deletar(tarefa, EditarTarefaActivity.this);
+                setResult(Activity.RESULT_OK, intent);
+                finish();
             }
         });
     }

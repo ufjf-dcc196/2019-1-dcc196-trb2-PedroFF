@@ -2,6 +2,7 @@ package com.example.trabalho2.model;
 
 import java.io.Serializable;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Tag implements Serializable {
     private Long id;
@@ -39,5 +40,13 @@ public class Tag implements Serializable {
                         "Título: %s \n" ,
                 this.getId(),
                 this.getTag());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tag)) return false;
+        Tag tag = (Tag) o;
+        return getId().equals(tag.getId());
     }
 }

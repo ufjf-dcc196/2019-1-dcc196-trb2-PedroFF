@@ -31,17 +31,6 @@ public class TagDAO {
         return values;
     }
 
-    public Integer atualizar(Tag tag, Context context){
-        DBHelper dBHelper = new DBHelper(context);
-        SQLiteDatabase db = dBHelper.getWritableDatabase();
-        return db.update(DbContract.Tag.NOME_TABELA, transformaParaValues(tag),DbContract.Tag._ID+"=?",transformaEmArgs(tag));
-    }
-
-    public Integer deletar(Tag tag,Context context){
-        DBHelper tarefaDBHelper = new DBHelper(context);
-        SQLiteDatabase db = tarefaDBHelper.getWritableDatabase();
-        return db.delete(DbContract.Tag.NOME_TABELA,DbContract.Tag._ID+"=?",transformaEmArgs(tag));
-    }
 
     private String[] transformaEmArgs(Tag tag) {
         return new String[]{tag.getId().toString()};

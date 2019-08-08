@@ -9,13 +9,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.PrincipalActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.CadastrarTarefaActivity"/>
+        <activity android:name=".activity.EditarTarefaActivity"/>
+        <activity android:name=".activity.InserirTagActivity"/>
+        <activity android:name=".activity.ListarTagActivity"/>
+        <activity android:name=".activity.ListarTarefaActivity"/>
     </application>
 
 </manifest>

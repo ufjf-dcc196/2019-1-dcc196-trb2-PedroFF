@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Tarefa implements Serializable {
     private Long id;
@@ -105,7 +106,7 @@ public class Tarefa implements Serializable {
 
     @Override
     public String toString() {
-        return String.format(Locale.getDefault(),
+        return String.format(
                 "Id: %d \n" +
                 "Título: %s \n" +
                 "Data Limite: %s \n" +
@@ -119,4 +120,13 @@ public class Tarefa implements Serializable {
                 this.getGrauDificuldade().getDescricao(),
                 this.getEstado().getDescricao());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tarefa)) return false;
+        Tarefa tarefa = (Tarefa) o;
+        return getId().equals(tarefa.getId());
+    }
+
 }

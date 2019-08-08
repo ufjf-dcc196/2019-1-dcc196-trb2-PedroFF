@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
     private static final String DATABASE_NAME = "ToDoList.db";
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -24,5 +24,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(DbContract.Tarefa.SQL_DROP_TAREFA);
         db.execSQL(DbContract.Tag.SQL_DROP_TAG);
         db.execSQL(DbContract.TarefaTag.SQL_DROP_TAREFA_TAG);
+        onCreate(db);
     }
 }
