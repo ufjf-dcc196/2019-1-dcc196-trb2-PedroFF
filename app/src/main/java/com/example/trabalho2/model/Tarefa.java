@@ -29,6 +29,16 @@ public class Tarefa implements Serializable {
         this.dt_atualizacao = format.parse(dt_atualizacao);
     }
 
+    public Tarefa(String titulo, String descricao, Grau grauDificuldade, Estado estado, List<Tag> tags, String dt_limite) throws ParseException {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.grauDificuldade = grauDificuldade;
+        this.estado = estado;
+        this.tags = tags;
+        this.dt_limite = format.parse(dt_limite);
+        this.dt_atualizacao = new Date();
+    }
+
     public String getDt_limite() {
         return format.format(dt_limite);
     }

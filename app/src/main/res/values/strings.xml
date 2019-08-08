@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">trabalho2</string>
+    <string name="app_name">TO DO LIST</string>
     <string name="trabalho_2_to_do_list">Trabalho 2 - TO DO LIST</string>
     <string name="titulo_da_tarefa">Título da Tarefa</string>
     <string name="grau_da_tarefa">Grau da Tarefa</string>

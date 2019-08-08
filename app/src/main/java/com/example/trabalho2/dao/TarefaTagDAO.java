@@ -56,7 +56,7 @@ public class TarefaTagDAO {
     }
 
 
-    public Integer deletar(Tarefa tarefa, Tag tag, Context context){
+    public Integer deletar(Tarefa tarefa, Context context){
         DBHelper tarefaDBHelper = new DBHelper(context);
         SQLiteDatabase db = tarefaDBHelper.getWritableDatabase();
         return db.delete(DbContract.TarefaTag.NOME_TABELA,DbContract.TarefaTag.TAREFA+"=?",transformaEmArgs(tarefa));

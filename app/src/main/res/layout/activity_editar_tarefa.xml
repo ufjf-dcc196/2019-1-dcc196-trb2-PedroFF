@@ -8,7 +8,7 @@
         android:baselineAligned="false" android:gravity="center">
 
     <EditText
-            android:id="@+id/tituloTag"
+            android:id="@+id/tituloTarefaEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -17,7 +17,7 @@
             tools:targetApi="o" android:hint="@string/titulo_da_tarefa" android:layout_marginBottom="34dp"/>
 
     <EditText
-            android:id="@+id/descricaoTarefa"
+            android:id="@+id/descricaoTarefaEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -27,7 +27,7 @@
             tools:targetApi="o" android:layout_marginBottom="34dp"/>
 
     <Spinner
-            android:id="@+id/grauTarefa"
+            android:id="@+id/grauTarefaEditar"
             style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="214dp"
             android:layout_height="39dp"
@@ -38,7 +38,7 @@
             android:spinnerMode="dialog"
             android:layout_marginBottom="34dp"/>
     <Spinner
-            android:id="@+id/estadoTarefa"
+            android:id="@+id/estadoTarefaEditar"
             style="@android:style/Widget.Material.Spinner.Underlined"
             android:layout_width="214dp"
             android:layout_height="39dp"
@@ -50,7 +50,7 @@
 
             android:layout_marginBottom="34dp"/>
     <EditText
-            android:id="@+id/dataTarefa"
+            android:id="@+id/dataTarefaEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -60,15 +60,15 @@
             tools:layout_editor_absoluteY="400dp" android:layout_marginBottom="34dp"/>
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="95dp" android:layout_marginBottom="28dp" android:id="@+id/tags"/>
+            android:layout_height="95dp" android:layout_marginBottom="28dp" android:id="@+id/tagsEditar"/>
     <Button
-            android:id="@+id/btnSalvarTarefa"
+            android:id="@+id/btnSalvarTarefaEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salvar_tarefa"
             android:baselineAligned="false"/>
     <Button
-            android:id="@+id/btnListar"
+            android:id="@+id/btnExcluirTarefa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/excluir_tarefa"
