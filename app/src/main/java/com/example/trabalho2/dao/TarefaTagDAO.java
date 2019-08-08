@@ -67,13 +67,13 @@ public class TarefaTagDAO {
     }
 
 
-    public Cursor getTarefasByEtiqueta(Context context, Tag tag) {
+    public Cursor getTarefasByTag(Context context, Tag tag) {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         return db.rawQuery(TarefasPorTag, new String[]{String.valueOf(tag.getId())});
     }
 
-    public Cursor getEtiquetasByTarefa(Context context, Tarefa tarefa) {
+    public Cursor getTagByTarefa(Context context, Tarefa tarefa) {
         DBHelper tarefaDBHelper = new DBHelper(context);
         SQLiteDatabase db = tarefaDBHelper.getReadableDatabase();
         return db.rawQuery(TagsPorTarefa, new String[]{String.valueOf(tarefa.getId())});

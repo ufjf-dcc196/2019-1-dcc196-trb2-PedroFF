@@ -14,14 +14,14 @@
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            tools:targetApi="o" android:hint="@string/t_tulo_da_tarefa" android:layout_marginBottom="34dp"/>
+            tools:targetApi="o" android:hint="@string/titulo_da_tarefa" android:layout_marginBottom="34dp"/>
 
     <EditText
             android:id="@+id/descricaoTarefa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/descri_o"
+            android:hint="@string/descricao"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             tools:targetApi="o" android:layout_marginBottom="34dp"/>
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="95dp" android:layout_marginBottom="28dp" android:id="@+id/tags"/>
     <Button
-            android:id="@+id/btnSalvarTag"
+            android:id="@+id/btnSalvarTarefa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salvar_tarefa"

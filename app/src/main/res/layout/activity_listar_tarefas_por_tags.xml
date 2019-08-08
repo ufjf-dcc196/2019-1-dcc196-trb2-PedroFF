@@ -8,7 +8,7 @@
         tools:context=".MainActivity">
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/tags"
+            android:id="@+id/tarefasPorTag"
             android:layout_width="389dp"
             android:layout_height="260dp"
             android:layout_marginStart="8dp"
@@ -18,9 +18,9 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo"/>
+            app:layout_constraintTop_toBottomOf="@+id/tituloTarefasPorTag"/>
     <TextView
-            android:id="@+id/titulo"
+            android:id="@+id/tituloTarefasPorTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

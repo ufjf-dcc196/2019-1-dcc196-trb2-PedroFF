@@ -57,4 +57,16 @@ public class TagDAO {
         String sort = DbContract.Tag.TITULO+ " ASC";
         return db.query(DbContract.Tag.NOME_TABELA, consulta, null, null, null, null, sort);
     }
+
+    public Cursor getTags(Context context){
+        DBHelper dBHelper = new DBHelper(context);
+        SQLiteDatabase db = dBHelper.getReadableDatabase();
+        String[] visao = {
+                DbContract.Tag._ID,
+                DbContract.Tag.TITULO
+        };
+        String sort = DbContract.Tag.TITULO+ " ASC";
+        return db.query(DbContract.Tag.NOME_TABELA, visao, null, null, null, null, sort);
+    }
+
 }

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">trabalho2</string>
     <string name="trabalho_2_to_do_list">Trabalho 2 - TO DO LIST</string>
-    <string name="t_tulo_da_tarefa">Título da Tarefa</string>
+    <string name="titulo_da_tarefa">Título da Tarefa</string>
     <string name="grau_da_tarefa">Grau da Tarefa</string>
-    <string name="descri_o">Descrição</string>
+    <string name="descricao">Descrição</string>
     <string name="estado_da_tarefa">Estado da Tarefa</string>
     <string name="nova_tag">NOVA TAG</string>
     <string name="nova_tarefa">NOVA TAREFA</string>

@@ -1,8 +1,20 @@
 package com.example.trabalho2.model;
 
-public class Tag {
+import java.io.Serializable;
+import java.util.Locale;
+
+public class Tag implements Serializable {
     private Long id;
     private String tag;
+
+    public Tag(Long id, String tag) {
+        this.id = id;
+        this.tag = tag;
+    }
+
+    public Tag(String tituloTag) {
+        this.tag = tituloTag;
+    }
 
     public Long getId() {
         return id;
@@ -18,5 +30,14 @@ public class Tag {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Id: %d \n" +
+                        "Título: %s \n" ,
+                this.getId(),
+                this.getTag());
     }
 }

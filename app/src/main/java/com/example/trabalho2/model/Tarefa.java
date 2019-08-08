@@ -1,12 +1,14 @@
 package com.example.trabalho2.model;
 
+import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class Tarefa {
+public class Tarefa implements Serializable {
     private Long id;
     private String titulo;
     private String descricao;
@@ -16,6 +18,16 @@ public class Tarefa {
     private Date dt_limite;
     private Date dt_atualizacao;
     private final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+
+    public Tarefa(Long id, String titulo, String descricao, int grauDificuldade, int estado, String dt_limite, String dt_atualizacao) throws ParseException {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.grauDificuldade = Grau.toEnum(grauDificuldade);
+        this.estado = Estado.toEnum(estado);
+        this.dt_limite = format.parse(dt_limite);
+        this.dt_atualizacao = format.parse(dt_atualizacao);
+    }
 
     public String getDt_limite() {
         return format.format(dt_limite);
