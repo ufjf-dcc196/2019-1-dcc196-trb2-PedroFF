@@ -22,12 +22,13 @@ public class PrincipalActivity extends AppCompatActivity {
     private static final int EDITAR_TAREFA = 2;
     private static final int DELETAR_TAREFA = 4;
     private static final int CADASTRAR_TAG = 3;
+    private RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-        RecyclerView rv = findViewById(R.id.tarefas_recycle);
+        rv = findViewById(R.id.tarefas_recycle);
         this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
         this.adapter.setOnTarefaClickListener(new TarefaAdapter.OnTarefaClickListener() {
             @Override
@@ -73,13 +74,28 @@ public class PrincipalActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK) {
                 Toast.makeText(this, "Tarefa deletada", Toast.LENGTH_SHORT).show();
                 this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
+                rv.setAdapter(this.adapter);
             }
         }
         if (requestCode == PrincipalActivity.EDITAR_TAREFA) {
             if (resultCode == Activity.RESULT_OK) {
                 Toast.makeText(this, "Tarefa alterada", Toast.LENGTH_SHORT).show();
                 this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
-
+                rv.setAdapter(this.adapter);
+            }
+        }
+        if (requestCode == PrincipalActivity.CADASTRAR_TAREFA) {
+            if (resultCode == Activity.RESULT_OK) {
+                Toast.makeText(this, "Tarefa cadastrada", Toast.LENGTH_SHORT).show();
+                this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
+                rv.setAdapter(this.adapter);
+            }
+        }
+        if (requestCode == PrincipalActivity.CADASTRAR_TAG) {
+            if (resultCode == Activity.RESULT_OK) {
+                Toast.makeText(this, "Tag cadastrada", Toast.LENGTH_SHORT).show();
+                this.adapter = new TarefaAdapter(TarefaDAO.getInstance().getTarefasPorEstado(this), null);
+                rv.setAdapter(this.adapter);
             }
         }
 

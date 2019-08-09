@@ -75,19 +75,23 @@ public class EditarTarefaActivity extends AppCompatActivity {
                 List<Tag> tagList = new ArrayList<>();
                 for(int i = 0; i < escolhidos.size();i++){
                     int key = escolhidos.keyAt(i);
-                    tagList.add(tarefaTagAdapter.getTag(key));
+                    if (escolhidos.get(key)) {
+                        tagList.add(tarefaTagAdapter.getTag(key));
+                    }
                 }
                 try {
                     Tarefa tarefa = new Tarefa(tituloT, descricaoT, grauT, estadoT, tagList, dtLimiteT);
-                    TarefaDAO.getInstance().salvar(tarefa, EditarTarefaActivity.this);
+                    tarefa.setId(EditarTarefaActivity.this.tarefa.getId());
+                    TarefaDAO.getInstance().atualizar(tarefa, EditarTarefaActivity.this);
                     TarefaTagDAO.getInstance().deletar(tarefa,EditarTarefaActivity.this);
                     for (Tag t:tarefa.getTags()) {
                         TarefaTagDAO.getInstance().salvar(tarefa, t,EditarTarefaActivity.this);
                     }
-                    Intent intent = new Intent();
+                    Intent intent = new Intent(EditarTarefaActivity.this, PrincipalActivity.class);
                     intent.putExtra("tarefa", tarefa);
                     setResult(Activity.RESULT_OK, intent);
                     finish();
+                    startActivity(intent);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -97,10 +101,11 @@ public class EditarTarefaActivity extends AppCompatActivity {
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(EditarTarefaActivity.this, PrincipalActivity.class);
                 TarefaDAO.getInstance().deletar(tarefa, EditarTarefaActivity.this);
                 setResult(Activity.RESULT_OK, intent);
                 finish();
+                startActivity(intent);
             }
         });
     }
